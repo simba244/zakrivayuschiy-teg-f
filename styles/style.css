@@ -7,10 +7,145 @@
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
-
 */
 
+
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+  font-family: var(--font-primary);
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  margin: 0 auto;
+}
+
+.header {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  height: 100vh; 
+  min-height: 327px;
+
+}
+
+.header__title-card {
+  display: grid;
+  gap: 25px;
+  justify-items: center;
+  border: var(--border);
+  padding-inline: var(--card-padding-horizontal); /* Горизонтальный*/
+  padding-block: var(--card-padding-vertical);   /* Вертикальный*/
+  background-color: var(--color-secondary) ;
+}
+
+.header__title {
+  font-family: var(--font-accent);
+  font-size: var(--font-accent-size);
+  font-weight: var(--font-text);
+  color: var(--color-accent);
+  line-height: 100%;
+}
+
+.header__text {
+  font-family: var(--font-accent);
+  font-size: var(--font-subtitle-size);
+  font-weight: var(--text-weight);
+  color: var(--color-accent);
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+
+.card {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto; /* 4 строки: заголовок, изображение, текст, футер */
+  max-width: var(--card-width);
+  background-color: var(--color-secondary) ;
+  border: var(--border);
+  margin: 0 auto;
+}
+
+.card__block-title {
+  font-size: var(--title-card-size);
+  font-variation-settings: var(--font-title);
+  padding-inline: 10px;
+  padding-block: 4px 6px;
+  border-bottom: 1px solid  var(--color-accent) ;
+}
+
+.card__block-image-container {
+  position: relative;
+}
+
+.card__block-image-label {
+  position: absolute;
+  inset-block-start: 25px;
+  inset-inline-end: 11px;
+  font-family: var(--font-accent);
+  font-weight: var(--text-weight);
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  color: var(--color-accent);
+  -webkit-text-stroke: 1px #ffffff80; /* Для Safari и Chrome */
+}
+
+.card__block-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__text-content {
+  display: grid;
+  gap: 24px;
+  border-top: 1px solid  var(--color-accent) ;
+  padding-inline: 25px;
+  padding-block: 25px;
+  font-size: var(--title-card-size);
+  font-variation-settings: var(--font-text);
+}
+
+.card__footer {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: end;
+  align-items: center;
+  gap: 8px;
+  padding-inline: 25px;
+  padding-block: 25px;
+}
+
+.card__icon-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+}
+
+.like-icon {
+  width: 39px;
+  height: 36px;
+}
+
+.card__like-button {
+  border: var(--border);
+  background-color: var(--color-secondary);
+  padding-inline: 10px;
+  padding-block: 6px;
+  cursor: pointer;
+  min-width: 130px;
+}
+
+.button__text {
+  font-family: var(--font-accent);
+  font-size: 13px;
+  font-weight: var(--text-weight);
+  font-variation-settings: var(--font-text);
+  color: var(--color-accent);
 }

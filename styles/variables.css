@@ -1,1 +1,28 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --font-primary: 'Inter', sans-serif;
+    --font-accent: 'PressStart2P', sans-serif;
+    
+    /* Веса вариативного шрифта */
+    --text-weight: 400;
+    --title-weight: 700;
+    
+
+    /* Настройки вариативного шрифта */
+    --font-text: 'wght' var(--text-weight);
+    --font-title: 'wght' var(--title-weight);
+    --title-card-size: 18px;
+
+    --font-accent-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+    --font-subtitle-size: clamp(0.875rem, 0.677rem + 0.85vw, 1.438rem);
+    --card-width: clamp(23.438rem, 16.373rem + 30.14vw, 43.5rem);
+
+
+    --color-accent: #000000;
+    --color-secondary: #ffffff;
+    --bg-image: url('../images/background.png');
+    --border: 2px var(--color-accent) solid;
+    --card-gap: 50px;
+    --card-padding-horizontal: clamp(0.875rem, -1.48rem + 10.05vw, 7.563rem);
+    --card-padding-vertical: clamp(7.5rem, 7.324rem + 0.75vw, 8rem);
+}
