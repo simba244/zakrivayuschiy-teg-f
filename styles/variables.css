@@ -29,28 +29,32 @@
     --card-padding-horizontal: clamp(0.875rem, -1.48rem + 10.05vw, 7.563rem);
     --card-padding-vertical: clamp(7.5rem, 7.324rem + 0.75vw, 8rem);
 
+    --contour-color: #000000;
+    --animation-fill-color: #FF0000;
+    --spark-color: #FF0000;
+
     --page-bg-image: 
     /* 1. Горизонтальные полосы (2px серые + 2px прозрачные) */
     repeating-linear-gradient(
-      90deg,
-      #d3d3d3 0px,
-      #d3d3d3 2px,
-      transparent 2px,
-      transparent 4px
+        90deg,
+        #d3d3d3 0px,
+        #d3d3d3 2px,
+        transparent 2px,
+        transparent 4px
     ),
     /* 2. Вертикальные полосы (аналогичные) */
     repeating-linear-gradient(
-      180deg,
-      #d3d3d3 0px,
-      #d3d3d3 2px,
-      transparent 2px,
-      transparent 4px
+        180deg,
+        #d3d3d3 0px,
+        #d3d3d3 2px,
+        transparent 2px,
+        transparent 4px
     ),
     /* 3. Основной вертикальный градиент затемнения */
     linear-gradient(
-      180deg,
-      #e7e7e7 0%,
-      #e7e7e7 0.01%,  /* Микрозадержка светлого */
-      #1a1a1a 100%
+        180deg,
+        #e7e7e7 0%,
+        #e7e7e7 0.01%,  /* Микрозадержка светлого */
+        #1a1a1a 100%
     );
 }
