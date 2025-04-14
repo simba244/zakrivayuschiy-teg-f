@@ -62,12 +62,41 @@
           </div>
         </article>
 
-        <button class="card__like-button">
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+        <button 
+          class="content__memory-button"
+          type="button"
+          onclick="window['dialog-id'].showModal();"
+          aria-controls="dialog-id"
+        >
+          <svg class="button__icon-save" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
             <use href="./icons/icons.svg#save-icon"></use>
           </svg>
           <span class="button__text">Сохранить на память</span>
         </button>
+
+
+
+        <dialog class="saved-dialog"
+            aria-label="Вставте дискету чтобы продолжить" 
+            id="dialog-id"
+        >
+          <svg class="button__icon-save" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+            <use href="./icons/icons.svg#save-icon"></use>
+          </svg>
+          <h3>Вставте <br> дискету, чтобы продолжить</h3>
+
+            <button
+              class="button-dialog"
+              class="close"
+              type="button"
+              onclick="window['dialog-id'].close();"
+            >
+              ОК
+            </button>
+    
+        </dialog>
+
+
 
       </section>   
 

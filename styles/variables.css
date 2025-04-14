@@ -16,13 +16,41 @@
     --font-accent-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
     --font-subtitle-size: clamp(0.875rem, 0.677rem + 0.85vw, 1.438rem);
     --card-width: clamp(23.438rem, 16.373rem + 30.14vw, 43.5rem);
+    --dialog-width: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
+    --dialog-paddind-inline: clamp(1.875rem, 2.8891rem + -1.1268vw, 2.625rem);
 
 
     --color-accent: #000000;
     --color-secondary: #ffffff;
     --bg-image: url('../images/background.png');
+    
     --border: 2px var(--color-accent) solid;
     --card-gap: 50px;
     --card-padding-horizontal: clamp(0.875rem, -1.48rem + 10.05vw, 7.563rem);
     --card-padding-vertical: clamp(7.5rem, 7.324rem + 0.75vw, 8rem);
+
+    --page-bg-image: 
+    /* 1. Горизонтальные полосы (2px серые + 2px прозрачные) */
+    repeating-linear-gradient(
+      90deg,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    /* 2. Вертикальные полосы (аналогичные) */
+    repeating-linear-gradient(
+      180deg,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    /* 3. Основной вертикальный градиент затемнения */
+    linear-gradient(
+      180deg,
+      #e7e7e7 0%,
+      #e7e7e7 0.01%,  /* Микрозадержка светлого */
+      #1a1a1a 100%
+    );
 }

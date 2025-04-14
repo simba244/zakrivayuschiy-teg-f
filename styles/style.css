@@ -12,7 +12,7 @@
 
 .page {
   font-family: var(--font-primary);
-  background-image: var(--bg-image);
+  background-image: var(--page-bg-image);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -57,6 +57,14 @@
   text-transform: uppercase;
 }
 
+
+.content {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: var(--card-gap);
+}
 
 .card {
   display: grid;
@@ -148,4 +156,75 @@
   font-weight: var(--text-weight);
   font-variation-settings: var(--font-text);
   color: var(--color-accent);
+}
+
+
+.content__memory-button {
+  font-family: var(--font-accent);
+  font-size: 15px;
+  font-weight: var(--text-weight);
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  padding-inline: 20px;
+  padding-block: 15px;
+  gap: 8px;
+  border: var(--border);
+  background: var(--color-secondary);
+  cursor: pointer;
+
+  @media (width >= 1024px) {
+    grid-template-columns: repeat(2, auto);
+    }
+
+}
+
+.button__icon-save {
+  width: 28px;
+  height: 28px;
+}
+
+
+.saved-dialog[open]{
+  position: fixed;
+  inset: 0;
+  display: grid;
+  text-transform: uppercase;
+  font-family: var(--font-accent);
+  font-weight: var(--text-weight);
+  font-size: 14px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 30px 20px;
+  justify-items: start;
+  align-items: center;
+  max-width: var(--dialog-width);
+  border: var(--border);
+  transition: opacity 0.3s ease-in-out;
+  padding-inline: var(--dialog-paddind-inline);
+}
+
+dialog:not([open]) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+dialog::backdrop {
+  background-color: #000000bf;
+} 
+
+.button-dialog {
+  border: var(--border);
+  background-color: var(--color-secondary);
+  padding-inline: 10px;
+  padding-block: 6px;
+  cursor: pointer;
+  width: 100%;
+  grid-column: 1 / span 2;
+}
+
+.saved-dialog .button__icon-save {
+  width: 40px;
+  height: 40px;
 }
