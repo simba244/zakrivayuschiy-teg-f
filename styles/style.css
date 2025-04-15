@@ -24,13 +24,13 @@
   display: grid;
   justify-items: center;
   align-items: center;
-  height: 100vh;
   min-height: 327px;
+  padding-block: 100px;
 }
 
 .header__title-card {
   display: grid;
-  gap: 25px;
+  gap: 20px;
   justify-items: center;
   border: var(--border);
   padding-inline: var(--card-padding-horizontal);
@@ -406,5 +406,4 @@ dialog::backdrop {
   display: grid;
   justify-items: center;
   align-items: center;
-  margin-bottom: 100px;
 }
