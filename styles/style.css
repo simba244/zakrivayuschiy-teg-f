@@ -35,8 +35,8 @@
   gap: 25px;
   justify-items: center;
   border: var(--border);
-  padding-inline: var(--card-padding-horizontal); /* Горизонтальный*/
-  padding-block: var(--card-padding-vertical);   /* Вертикальный*/
+  padding-inline: var(--card-padding-horizontal); /* Гориз*/
+  padding-block: var(--card-padding-vertical);   /* Вертик*/
   background-color: var(--color-secondary) ;
 }
 
@@ -68,7 +68,7 @@
 
 .card {
   display: grid;
-  grid-template-rows: auto auto 1fr auto; /* 4 строки: заголовок, изображение, текст, футер */
+  grid-template-rows: auto auto 1fr auto; 
   max-width: var(--card-width);
   background-color: var(--color-secondary) ;
   border: var(--border);
@@ -83,6 +83,7 @@
   border-bottom: 1px solid  var(--color-accent) ;
 }
 
+/* Тут помогла демка от куратора, но возможно напутал с микс-блендами, но вроде все работает*/
 .card__block-image-container {
   position: relative;
 }
@@ -97,7 +98,7 @@
   opacity: 0.6;
   mix-blend-mode: hard-light;
   color: var(--color-accent);
-  -webkit-text-stroke: 1px #ffffffcb; /* Для Safari и Chrome */
+  -webkit-text-stroke: 1px #ffffffcb;
 }
 
 .card__block-image {
@@ -145,7 +146,7 @@
 .card__like-button {
   position: relative;
   z-index: 1;
-  border:  2px var(--color-accent) solid;
+  border: 2px var(--color-accent) solid;
   background-color: var(--color-secondary);
   padding-inline: 10px;
   padding-block: 6px;
@@ -233,6 +234,91 @@
   box-shadow: 2px 2px 0 var(--color-accent); 
 }
 
+/* Поправил анимации, оставил подсказки по работе без шорткатов*/
+@keyframes change-scale {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+@keyframes change-opacity {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.like-icon .sparks {
+  fill: var(--animation-fill-color);
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+  /* transition-property: opacity;    
+  transition-duration: 0.3s;      
+  transition-timing-function: ease-in; */
+}
+
+.like-icon .contour {
+  fill: var(--color-accent);
+  transition: fill 0.1s linear;
+  /* transition-property: fill;       
+  transition-duration: 0.1s;     
+  transition-timing-function: linear; */
+}
+
+.like-icon .core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s linear;
+  /* transition-property: fill;      
+  transition-duration: 0.3s;    
+  transition-delay: 0.03s;      
+  transition-timing-function: linear; */
+}
+
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .core {
+  fill: var(--color-accent);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--color-accent);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked {
+  animation: change-scale 0.3s 0.1s ease-in;
+  }
+  
+.like-icon.is-liked .sparks {
+  animation: change-opacity 0.3s 0.3s ease-in;
+  }
 
 .saved-dialog[open]{
   position: fixed;
@@ -278,80 +364,9 @@ dialog::backdrop {
   height: 40px;
 }
 
-@keyframes change-scale {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.1); }
-}
 
-@keyframes change-opacity {
-  0% { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
-.like-icon .sparks {
-  fill: var(--spark-color);
-  opacity: 0;
-  transition: opacity 0.3s ease-in;
-}
-
-.like-icon .contour {
-  fill: var(--contour-color);
-  transition: fill 0.1s linear;
-}
-
-.like-icon .core {
-  fill: transparent;
-  transition: fill 0.3s 0.03s linear;
-}
-
-.like-icon .main-body {
-  fill: transparent;
-  transition: fill 0.3s linear;
-}
-
-.like-icon:hover .core {
-  fill: var(--contour-color);
-  transition: fill 0.3s linear;
-}
-
-.like-icon:hover .main-body {
-  fill: var(--contour-color);
-  transition: fill 0.3s 0.05s linear;
-}
-
-.like-icon:active .core {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s linear;
-}
-
-.like-icon:active .main-body {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s 0.05s linear;
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s 0.06s linear;
-}
-
-.like-icon.is-liked .core {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s linear;
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s 0.05s linear;
-}
-
-.like-icon.is-liked {
-  animation: change-scale 0.3s 0.1s ease-in;
-  }
-  
-.like-icon.is-liked .sparks {
-  animation: change-opacity 0.3s 0.3s ease-in;
-  }
+/* Первую карточку не стал тюнить, чтобы можно было с пиксель перфектом сравнить на ревью
+Контент так же не стал менять, чтобы не было проблем с ревью */
 
 .card-image-preparation {
 
@@ -382,7 +397,7 @@ dialog::backdrop {
 }
 
 .card-image-now {
-  mix-blend-mode: difference;
+  mix-blend-mode: difference; 
 }
 
 .footer {

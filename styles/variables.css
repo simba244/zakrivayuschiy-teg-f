@@ -22,6 +22,7 @@
 
     --color-accent: #000000;
     --color-secondary: #ffffff;
+    --animation-fill-color: #FF0000;
     --bg-image: url('../images/background.png');
     
     --border: 2px var(--color-accent) solid;
@@ -29,9 +30,7 @@
     --card-padding-horizontal: clamp(0.875rem, -1.48rem + 10.05vw, 7.563rem);
     --card-padding-vertical: clamp(7.5rem, 7.324rem + 0.75vw, 8rem);
 
-    --contour-color: #000000;
-    --animation-fill-color: #FF0000;
-    --spark-color: #FF0000;
+
 
     --page-bg-image: 
     /* 1. Горизонтальные полосы (2px серые + 2px прозрачные) */
