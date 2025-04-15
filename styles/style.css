@@ -62,7 +62,7 @@
   display: grid;
   justify-items: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 100px;
   gap: var(--card-gap);
 }
 
@@ -145,21 +145,19 @@
 .card__like-button {
   position: relative;
   z-index: 1;
-  mix-blend-mode: difference;
-  border:  2px var(--color-secondary) solid;;
-  background-color: var(--color-accent);
+  border:  2px var(--color-accent) solid;
+  background-color: var(--color-secondary);
   padding-inline: 10px;
   padding-block: 6px;
   cursor: pointer;
-  min-width: 130px;
+  min-width: 130px;     
 }
-
 
 .card__like-button:after {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: var(--color-secondary);
+  background-color: var(--color-accent);
   transform-origin: left;
   transform: scaleX(0);
   transition: transform 0.5s ease-in-out;
@@ -181,30 +179,58 @@
   mix-blend-mode: difference;
 }
 
-
+.card__like-button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--color-accent); 
+}
 
 .content__memory-button {
   font-family: var(--font-accent);
   font-weight: var(--text-weight);
   display: grid;
+  position: relative;
+  z-index: 1;
+  border:  2px var(--color-accent) solid;
+  background-color: var(--color-secondary);
   justify-items: center;
   align-items: center;
   padding-inline: 20px;
   padding-block: 15px;
   gap: 8px;
-  border: var(--border);
-  background: var(--color-secondary);
   cursor: pointer;
 
   @media (width >= 1024px) {
     grid-template-columns: repeat(2, auto);
     }
-
 }
 
 .button__icon-save {
   width: 28px;
   height: 28px;
+  position: relative;
+  z-index: 1;
+  color: var(--color-secondary);
+  mix-blend-mode: difference;
+}
+
+
+.content__memory-button:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-accent);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.content__memory-button:hover:after {
+  transform: scaleX(1);
+}
+
+.content__memory-button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--color-accent); 
 }
 
 
@@ -326,3 +352,42 @@ dialog::backdrop {
 .like-icon.is-liked .sparks {
   animation: change-opacity 0.3s 0.3s ease-in;
   }
+
+.card-image-preparation {
+
+}
+
+.card-image-null {
+  filter: contrast(3);
+}
+
+.card-image-fail {
+  filter: grayscale(1);
+}
+
+.card-image-ideal {
+  filter: hue-rotate(180deg);
+}
+
+.card-image-near {
+  filter: invert(0.7);
+}
+
+.card-image-strategy {
+  filter: invert(100%) sepia(80%);
+}
+
+.card-image-down {
+  filter: blur(20px);
+}
+
+.card-image-now {
+  mix-blend-mode: difference;
+}
+
+.footer {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
