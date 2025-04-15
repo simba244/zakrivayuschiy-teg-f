@@ -3,12 +3,8 @@
     --font-primary: 'Inter', sans-serif;
     --font-accent: 'PressStart2P', sans-serif;
     
-    /* Веса вариативного шрифта */
     --text-weight: 400;
     --title-weight: 700;
-    
-
-    /* Настройки вариативного шрифта */
     --font-text: 'wght' var(--text-weight);
     --font-title: 'wght' var(--title-weight);
     --title-card-size: 18px;
@@ -19,21 +15,16 @@
     --dialog-width: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
     --dialog-paddind-inline: clamp(1.875rem, 2.8891rem + -1.1268vw, 2.625rem);
 
-
     --color-accent: #000000;
     --color-secondary: #ffffff;
     --animation-fill-color: #FF0000;
     --bg-image: url('../images/background.png');
-    
     --border: 2px var(--color-accent) solid;
     --card-gap: 50px;
     --card-padding-horizontal: clamp(0.875rem, -1.48rem + 10.05vw, 7.563rem);
     --card-padding-vertical: clamp(7.5rem, 7.324rem + 0.75vw, 8rem);
 
-
-
     --page-bg-image: 
-    /* 1. Горизонтальные полосы (2px серые + 2px прозрачные) */
     repeating-linear-gradient(
         90deg,
         #d3d3d3 0px,
@@ -41,7 +32,6 @@
         transparent 2px,
         transparent 4px
     ),
-    /* 2. Вертикальные полосы (аналогичные) */
     repeating-linear-gradient(
         180deg,
         #d3d3d3 0px,
@@ -49,11 +39,10 @@
         transparent 2px,
         transparent 4px
     ),
-    /* 3. Основной вертикальный градиент затемнения */
     linear-gradient(
         180deg,
         #e7e7e7 0%,
-        #e7e7e7 0.01%,  /* Микрозадержка светлого */
+        #e7e7e7 0.01%, 
         #1a1a1a 100%
     );
 }

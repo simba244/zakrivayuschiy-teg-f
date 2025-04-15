@@ -9,7 +9,6 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 */
 
-
 .page {
   font-family: var(--font-primary);
   background-image: var(--page-bg-image);
@@ -25,9 +24,8 @@
   display: grid;
   justify-items: center;
   align-items: center;
-  height: 100vh; 
+  height: 100vh;
   min-height: 327px;
-
 }
 
 .header__title-card {
@@ -35,9 +33,9 @@
   gap: 25px;
   justify-items: center;
   border: var(--border);
-  padding-inline: var(--card-padding-horizontal); /* Гориз*/
-  padding-block: var(--card-padding-vertical);   /* Вертик*/
-  background-color: var(--color-secondary) ;
+  padding-inline: var(--card-padding-horizontal);
+  padding-block: var(--card-padding-vertical);
+  background-color: var(--color-secondary);
 }
 
 .header__title {
@@ -57,7 +55,6 @@
   text-transform: uppercase;
 }
 
-
 .content {
   display: grid;
   justify-items: center;
@@ -68,9 +65,9 @@
 
 .card {
   display: grid;
-  grid-template-rows: auto auto 1fr auto; 
+  grid-template-rows: auto auto 1fr auto;
   max-width: var(--card-width);
-  background-color: var(--color-secondary) ;
+  background-color: var(--color-secondary);
   border: var(--border);
   margin: 0 auto;
 }
@@ -80,7 +77,7 @@
   font-variation-settings: var(--font-title);
   padding-inline: 10px;
   padding-block: 4px 6px;
-  border-bottom: 1px solid  var(--color-accent) ;
+  border-bottom: 1px solid var(--color-accent);
 }
 
 /* Тут помогла демка от куратора, но возможно напутал с микс-блендами, но вроде все работает*/
@@ -110,7 +107,7 @@
 .card__text-content {
   display: grid;
   gap: 24px;
-  border-top: 1px solid  var(--color-accent) ;
+  border-top: 1px solid var(--color-accent);
   padding-inline: 25px;
   padding-block: 25px;
   font-size: var(--title-card-size);
@@ -151,7 +148,7 @@
   padding-inline: 10px;
   padding-block: 6px;
   cursor: pointer;
-  min-width: 130px;     
+  min-width: 130px;
 }
 
 .card__like-button:after {
@@ -182,7 +179,7 @@
 
 .card__like-button:focus-visible {
   outline: none;
-  box-shadow: 2px 2px 0 var(--color-accent); 
+  box-shadow: 2px 2px 0 var(--color-accent);
 }
 
 .content__memory-button {
@@ -191,7 +188,7 @@
   display: grid;
   position: relative;
   z-index: 1;
-  border:  2px var(--color-accent) solid;
+  border: 2px var(--color-accent) solid;
   background-color: var(--color-secondary);
   justify-items: center;
   align-items: center;
@@ -202,7 +199,7 @@
 
   @media (width >= 1024px) {
     grid-template-columns: repeat(2, auto);
-    }
+  }
 }
 
 .button__icon-save {
@@ -213,7 +210,6 @@
   color: var(--color-secondary);
   mix-blend-mode: difference;
 }
-
 
 .content__memory-button:after {
   content: "";
@@ -231,19 +227,29 @@
 
 .content__memory-button:focus-visible {
   outline: none;
-  box-shadow: 2px 2px 0 var(--color-accent); 
+  box-shadow: 2px 2px 0 var(--color-accent);
 }
 
 /* Поправил анимации, оставил подсказки по работе без шорткатов*/
 @keyframes change-scale {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.1); }
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }
 
 @keyframes change-opacity {
-  0% { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .like-icon .sparks {
@@ -314,13 +320,13 @@
 
 .like-icon.is-liked {
   animation: change-scale 0.3s 0.1s ease-in;
-  }
-  
+}
+
 .like-icon.is-liked .sparks {
   animation: change-opacity 0.3s 0.3s ease-in;
-  }
+}
 
-.saved-dialog[open]{
+.saved-dialog[open] {
   position: fixed;
   inset: 0;
   display: grid;
@@ -344,10 +350,9 @@ dialog:not([open]) {
   pointer-events: none;
 }
 
-
 dialog::backdrop {
   background-color: #000000bf;
-} 
+}
 
 .button-dialog {
   border: var(--border);
@@ -364,12 +369,9 @@ dialog::backdrop {
   height: 40px;
 }
 
-
-/* Первую карточку не стал тюнить, чтобы можно было с пиксель перфектом сравнить на ревью
-Контент так же не стал менять, чтобы не было проблем с ревью */
+/* Первую карточку не стал тюнить, чтобы можно было с пиксель перфектом сравнить на ревью должно быть четко*/
 
 .card-image-preparation {
-
 }
 
 .card-image-null {
@@ -397,7 +399,7 @@ dialog::backdrop {
 }
 
 .card-image-now {
-  mix-blend-mode: difference; 
+  filter: blur(3px) sepia(80%) invert(100%);
 }
 
 .footer {
