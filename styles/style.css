@@ -385,6 +385,7 @@
   justify-items: start;
   align-items: center;
   max-width: var(--dialog-width); 
+  max-height: var(--saved-dialog-hight);
   border: var(--border);
   transition: opacity 0.3s ease-in-out;
   padding-inline: 42px;
