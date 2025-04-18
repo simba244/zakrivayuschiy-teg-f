@@ -8,12 +8,16 @@
     --font-text: 'wght' var(--text-weight);
     --font-title: 'wght' var(--title-weight);
     --title-card-size: 18px;
+    --card-padding-block: clamp(1.563rem, 1.518rem + 0.19vw, 1.688rem);
 
     --font-accent-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
     --font-subtitle-size: clamp(0.875rem, 0.677rem + 0.85vw, 1.438rem);
     --card-width: clamp(23.438rem, 16.373rem + 30.14vw, 43.5rem);
     --dialog-width: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
     --dialog-paddind-inline: clamp(1.875rem, 2.8891rem + -1.1268vw, 2.625rem);
+    --label-inset-block-start: clamp(1.375rem, 1.331rem + 0.19vw, 1.5rem);
+    --label-inset-block-end: clamp(0.75rem, 0.53rem + 0.94vw, 1.375rem);
+
 
     --color-accent: #000000;
     --color-secondary: #ffffff;

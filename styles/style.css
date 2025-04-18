@@ -9,6 +9,23 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 */
 
+/* Яна,привет, спасибо за рефью ⚡
+1 Убрал ошибки на валидаторе
+2 Добавил кнопкам type
+3 Поправил иконку лайка
+4 "Между кнопкой с иконкой лайка и кнопкой Like согласно заданию есть разрыв" 
+не совсем понял, какой именно разрыв, но проверил макет и поправил отступы
+5 Поправил все в пиксель перфект
+6 webkit-text-stroke text-shadow
+7 Сократил личный текст в карточках чтобы не плыло. 
+В коде есть закоменченные переполнения, оставил их на случай, если нужно будет ограничивать размер контента
+8 Анимации перенес в отдельный файл
+9 Сделал имена классов по типу применяемого фильтра
+10 Убрал <br> из разметки
+11 Тег <footer> также убрал
+Надеюсь ничего не забыл )
+*/
+
 .page {
   font-family: var(--font-primary);
   background-image: var(--page-bg-image);
@@ -87,8 +104,8 @@
 
 .card__block-image-label {
   position: absolute;
-  inset-block-start: 22px;
-  inset-inline-end: 12px;
+  inset-block-start: var(--label-inset-block-start);
+  inset-inline-end: var(--label-inset-block-end);
   font-family: var(--font-accent);
   font-weight: var(--text-weight);
   font-size: 14px;
@@ -97,9 +114,9 @@
   color: var(--color-accent);
   text-shadow: 
   -1px -1px 0 var(--color-secondary),  
-   1px -1px 0 var(--color-secondary),  
+  1px -1px 0 var(--color-secondary),  
   -1px  1px 0 var(--color-secondary),  
-   1px  1px 0 var(--color-secondary);
+  1px  1px 0 var(--color-secondary);
 }
 
 
@@ -119,7 +136,7 @@
   border-top: 2px solid var(--color-accent);
   gap: 26px;
   padding-inline: 25px;
-  padding-block: 25px;
+  padding-block: var(--card-padding-block);
   font-size: var(--title-card-size);
   font-variation-settings: var(--font-text);
   /* Отсюда и ниже два блока повозился с переполнением
@@ -249,6 +266,11 @@
   z-index: 1;
   color: var(--color-secondary);
   mix-blend-mode: difference;
+
+  @media (width >= 1024px) {
+    width: 21px;
+    height: 21px;
+  }
 }
 
 
@@ -349,22 +371,36 @@
 }
 
 .saved-dialog[open] {
+  padding: 0;
   position: fixed;
-  inset: 0;
   display: grid;
+  justify-items: stretch;
   text-transform: uppercase;
   font-family: var(--font-accent);
-  font-weight: var(--text-weight);
+  font-weight: var(--font-text);
   font-size: 14px;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
   gap: 30px 20px;
   justify-items: start;
   align-items: center;
-  max-width: var(--dialog-width);
+  max-width: var(--dialog-width); 
   border: var(--border);
   transition: opacity 0.3s ease-in-out;
-  padding-inline: var(--dialog-paddind-inline);
+  padding-inline: 42px;
+  padding-block: 30px; 
+
+  @media (width >= 1024px) {
+      padding-inline: 30px;
+  }
+}
+
+.modal-text {
+  font-weight: var(--font-text);
+  line-height: 1.5;
+  font-size: 14px;
+  /* letter-spacing: -0.05em; */
+  overflow: hidden;
 }
 
 dialog:not([open]) {
@@ -380,9 +416,9 @@ dialog::backdrop {
   border: var(--border);
   background-color: var(--color-secondary);
   padding-inline: 10px;
-  padding-block: 6px;
+  padding-block: 10px;
   cursor: pointer;
-  width: 100%;
+  inline-size: 100%;
   grid-column: 1 / span 2;
 }
 
@@ -396,11 +432,11 @@ dialog::backdrop {
 .card-image-preparation {
 }
 
-.card-image-null {
+.card-filter-contrast {
   filter: contrast(3);
 }
 
-.card-image-fail {
+.card-filter-grayscale {
   filter: grayscale(1);
 }
 
@@ -408,11 +444,11 @@ dialog::backdrop {
   filter: hue-rotate(180deg);
 }
 
-.card-image-near {
+.card-filter-invert {
   filter: invert(0.7);
 }
 
-.card-image-strategy {
+.card-filter-invert-sepia {
   filter: invert(100%) sepia(80%);
 }
 
@@ -424,9 +460,13 @@ dialog::backdrop {
   filter: blur(3px) sepia(80%) invert(100%);
 }
 
+
+
 .footer {
   display: grid;
   justify-items: center;
   align-items: center;
-  /* margin: -4px auto 100px; */
+  margin: 0px auto 100px;
 }
+
+
