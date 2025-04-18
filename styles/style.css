@@ -423,6 +423,15 @@ dialog::backdrop {
   grid-column: 1 / span 2;
 }
 
+.button-dialog:focus {
+  outline: none;
+}
+
+.button-dialog:focus-visible {
+  outline: none;
+  border: 2px var(--color-accent) solid;
+}
+
 .saved-dialog .button__icon-save {
   width: 40px;
   height: 40px;
